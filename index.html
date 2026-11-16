@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Mind Map</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mind Map">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17171a" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="viewport">
+    <div id="world">
+      <svg id="links" width="1" height="1" aria-hidden="true"></svg>
+      <div id="nodes"></div>
+    </div>
+  </div>
+
+  <header id="topbar">
+    <button class="icon-btn" id="btn-menu" aria-label="Maps and options"></button>
+    <div id="title"></div>
+    <div class="group">
+      <button class="icon-btn" id="btn-undo" aria-label="Undo"></button>
+      <button class="icon-btn" id="btn-redo" aria-label="Redo"></button>
+      <button class="icon-btn" id="btn-fit" aria-label="Fit map to screen"></button>
+    </div>
+  </header>
+
+  <nav id="toolbar" aria-label="Node actions">
+    <button id="btn-child"><i></i><span>Branch</span></button>
+    <button id="btn-sibling"><i></i><span>Sibling</span></button>
+    <button id="btn-emoji"><i></i><span>Emoji</span></button>
+    <button id="btn-edit"><i></i><span>Edit</span></button>
+    <button id="btn-color"><i></i><span>Color</span></button>
+    <button id="btn-delete"><i></i><span>Delete</span></button>
+  </nav>
+
+  <div id="backdrop" hidden></div>
+  <section id="sheet" hidden role="dialog" aria-modal="true">
+    <div class="sheet-head">
+      <h2 id="sheet-title"></h2>
+      <button class="icon-btn" id="sheet-close" aria-label="Close"></button>
+    </div>
+    <div id="sheet-body"></div>
+  </section>
+  <input type="file" id="file-input" accept="application/json,.json" hidden>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
